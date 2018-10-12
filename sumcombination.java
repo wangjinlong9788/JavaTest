@@ -7,7 +7,7 @@ public class sumcombination {
         List<Integer> list=new ArrayList<>();
         int[] arr=new int[]{6,7,8,9,10};
                   
-        backtracking(arr,resList, list, 1, 1,n-1, k);
+        backtracking(arr,resList, list, 1, 0,n, k);
         return resList;
     }
      
@@ -15,7 +15,7 @@ public class sumcombination {
         if(t>k){
             resList.add(new ArrayList<>(list));
         }else{
-            for(int i=start;i<=n;i++){
+            for(int i=start;i<n;i++){
                 list.add(arr[i]);
                 backtracking(arr,resList, list, t+1,i+1, n, k);
                 list.remove(list.size()-1);
